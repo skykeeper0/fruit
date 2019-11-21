@@ -17,11 +17,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 ReactDOM.render(<MuiThemeProvider>
-  <Router>
-    <Row around='xs'>
-      <Col xs={12} md={11}>
-        <Route exact path="/" component={FruitComponent} />
-      </Col>
-    </Row>
-  </Router>
+    <Router>
+        <Row around='xs'>
+            <Col xs={12} md={11}>
+                <Route exact path="/" component={FruitComponent} />
+            </Col>
+        </Row>
+    </Router>
 </MuiThemeProvider>, document.getElementById('root'));
