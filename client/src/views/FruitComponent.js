@@ -48,18 +48,22 @@ export default class FruitComponent extends React.Component {
 
     onButtonClick() {
         const fruitName = this.state.inputValue;
-        fetch(`http://localhost:3000/api/fruits?name=${fruitName}`)
-            .then(res => {
-                return res.json();
-            })
-            .then(fruit => {
-                if (fruit[0]) {
-                    this.setState({
-                        fruit: fruit[0]
-                    })
+        this.setState({
+            fruit: {}
+        }, () => {
+            fetch(`http://localhost:3000/api/fruits?name=${fruitName}`)
+                .then(res => {
+                    return res.json();
+                })
+                .then(fruit => {
+                    if (fruit[0]) {
+                        this.setState({
+                            fruit: fruit[0]
+                        })
+                    }
                 }
-            }
-        )
+            )
+        })
     }
 
     render() {
